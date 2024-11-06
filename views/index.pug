@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Animated Drawer
+    link(rel="stylesheet", href="/drawer.css")
+  
+  body
+    //- Drawer mixin definition 
+    mixin drawer(position, content)
+      .chest__drawer.drawer(data-position=position data-opened="false")
+        details
+          summary
+        .drawer__structure
+          .drawer__panel.drawer__panel--back
+            if position === 3
+              - const letters = 'Awesome'.split('')
+              each letter in letters
+                span.letter= letter
+            else
+              span= content
+          .drawer__panel.drawer__panel--bottom
+          .drawer__panel.drawer__panel--right
+          .drawer__panel.drawer__panel--left
+          .drawer__panel.drawer__panel--front
+    
+    //- Main chest container
+    .chest
+      //- Chest panels
+      .chest__panel.chest__panel--back
+      .chest__panel.chest__panel--top
+      .chest__panel.chest__panel--bottom
+      .chest__panel.chest__panel--right
+      .chest__panel.chest__panel--front
+        .chest__panel.chest__panel--front-frame
+      .chest__panel.chest__panel--left
+      
+      //- Drawers
+      +drawer(1, "CSS")
+      +drawer(2, "is")
+      +drawer(3)
+
+    script(src="/script.js")
