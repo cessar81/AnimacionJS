@@ -1,0 +1,12 @@
+Para empezar se tienen que abrir 2 terminales, en la primera terminal se ejecuta el siguiente comando:
+
+npm run sass
+
+En la segunda terminal se ejecuta el siguiente comando:
+node server.js
+
+En caso de no tener el:
+node_modules
+
+Se ejecuta el siguiente comando:
+npm i
